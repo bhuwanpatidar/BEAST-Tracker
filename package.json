@@ -1,0 +1,16 @@
+{
+  "name": "beast-tracker",
+  "productName": "BEAST Tracker",
+  "version": "1.0.0",
+  "description": "Offline bug bounty progress tracker with an encrypted local vault",
+  "main": "main.js",
+  "private": true,
+  "scripts": { "start": "electron .", "test": "node test-vault.js", "dist": "electron-builder" },
+  "build": {
+    "appId": "local.beast.tracker",
+    "files": ["main.js", "preload.js", "vault.js", "src/**/*"],
+    "win": { "target": "nsis" },
+    "mac": { "target": "dmg" },
+    "linux": { "target": "AppImage" }
+  }
+}
